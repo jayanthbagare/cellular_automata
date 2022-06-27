@@ -2,7 +2,6 @@ import random
 import time
 from pyray import *
 
-
 width = 600
 height = 600
 grid = [0] * 10
@@ -29,11 +28,11 @@ def update_grid():
 				case '001':
 					tmpGrid[i] = 1
 				case '010':
-					tmpGrid[i] = 0
+					tmpGrid[i] = 1
 				case '100':
 					tmpGrid[i] = 1
 				case '110':
-					tmpGrid[i] = 1
+					tmpGrid[i] = 0
 				case '011':
 					tmpGrid[i] = 1
 				case '101':
@@ -41,8 +40,6 @@ def update_grid():
 				case '111':
 					tmpGrid[i] = 0
 	grid = tmpGrid
-
-
 
 def draw_cells():
 	for i in range(10):
@@ -53,8 +50,6 @@ def draw_cells():
 
 init_window(width,height,"Cellular Automata in 1D")
 setup_grid()
-
-print(get_frame_time())
 
 while not window_should_close():
 	time.sleep(0.5)
